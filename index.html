@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dubai Heritage Tours</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.2);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+    .hero-image {
+      background-image: url('https://images.pexels.com/photos/34298301/pexels-photo-34298301.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Navbar -->
+  <header class="fixed w-full z-50 bg-white shadow-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <div class="text-2xl font-bold text-yellow-700">Dubai Heritage</div>
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="index.html" class="hover:text-yellow-600">Home</a>
+        <a href="tours.html" class="hover:text-yellow-600">Tours</a>
+        <a href="gallery.html" class="hover:text-yellow-600">Gallery</a>
+        <a href="contact.html" class="hover:text-yellow-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-image relative flex items-center justify-center text-center text-white">
+    <div class="glass absolute max-w-xl mx-auto text-center" data-aos="fade-up">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Explore the Soul of Dubai</h1>
+      <p class="text-lg md:text-xl mb-6">Traditional. Authentic. Unforgettable.</p>
+      <a href="tours.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-full transition">View Tours</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-down">
+        <h2 class="text-3xl font-bold text-yellow-700">Why Choose Us</h2>
+        <p class="text-gray-600 mt-2">Discover Dubai like never before</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 text-center" data-aos="fade-up">
+          <i data-feather="map-pin" class="w-8 h-8 text-yellow-600 mb-4 align-center"></i>
+          <h3 class="text-xl font-semibold mb-2">Local Guides</h3>
+          <p>Experience Dubai through the eyes of locals.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 text-center" data-aos="fade-up" data-aos-delay="100">
+          <i data-feather="landmark" class="w-8 h-8 text-yellow-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Heritage Sites</h3>
+          <p>Visit historic souks, mosques, and museums.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 text-center" data-aos="fade-up" data-aos-delay="200">
+          <i data-feather="sun" class="w-8 h-8 text-yellow-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Desert Adventures</h3>
+          <p>Ride camels, enjoy sunset dinners, and more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Home -->
+  <div class="text-center my-10" data-aos="fade-in">
+    <a href="index.html" class="text-yellow-700 hover:underline text-lg">← Back to Home</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+      <p class="mb-4 md:mb-0">&copy; 2025 Dubai Heritage Tours</p>
+      <div class="flex gap-4">
+        <a href="#"><i data-feather="facebook" class="w-6 h-6"></i></a>
+        <a href="#"><i data-feather="instagram" class="w-6 h-6"></i></a>
+        <a href="#"><i data-feather="twitter" class="w-6 h-6"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    feather.replace();
+  </script>
+</body>
+</html>
