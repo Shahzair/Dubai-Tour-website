@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dubai Heritage Tours</title>
-
+  <title>Dubai Tours</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Animate on Scroll -->
@@ -13,41 +12,69 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet" />
   <!-- Feather Icons -->
   <script src="https://unpkg.com/feather-icons"></script>
-
   <style>
     body {
       font-family: 'Roboto', sans-serif;
     }
     .glass {
       background: rgba(255, 255, 255, 0.2);
-      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       border-radius: 1rem;
       padding: 2rem;
     }
     .hero-image {
-      background-image: url('https://images.pexels.com/photos/34298301/pexels-photo-34298301.jpeg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
+    background-image: url('/assets/sky 1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    }
+    .feature-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @keyframes scrollX {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-25%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll-x {
+      animation: scrollX 30s linear infinite;
     }
   </style>
 </head>
 <body class="bg-white text-gray-800">
-
-  <!-- Navbar -->
-  <header class="fixed w-full z-50 bg-white shadow-md">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      <div class="text-2xl font-bold text-yellow-700">Dubai Heritage</div>
-      <nav class="hidden md:flex gap-6 text-sm font-medium">
-        <a href="index.html" class="hover:text-yellow-600">Home</a>
-        <a href="tours.html" class="hover:text-yellow-600">Tours</a>
-        <a href="gallery.html" class="hover:text-yellow-600">Gallery</a>
-        <a href="contact.html" class="hover:text-yellow-600">Contact</a>
-      </nav>
-    </div>
-  </header>
-
+<!-- Navbar -->
+<header class="fixed w-full z-50 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <div class="text-2xl font-bold text-yellow-700">Explore Dubai</div>
+    <!-- Hamburger Button -->
+    <button id="menu-toggle" class="md:hidden text-yellow-700 focus:outline-none">
+      <i data-feather="menu" class="w-6 h-6"></i>
+    </button>
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex gap-6 text-sm font-medium">
+      <a href="index.html" class="hover:text-yellow-600">Home</a>
+      <a href="tours.html" class="hover:text-yellow-600">Tours</a>
+      <a href="gallery.html" class="hover:text-yellow-600">Gallery</a>
+      <a href="contact.html" class="hover:text-yellow-600">Contact</a>
+    </nav>
+  </div>
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu" class="hidden md:hidden flex flex-col gap-4 px-6 py-4 bg-white shadow-md text-sm font-medium">
+    <a href="index.html" class="hover:text-yellow-600">Home</a>
+    <a href="tours.html" class="hover:text-yellow-600">Tours</a>
+    <a href="gallery.html" class="hover:text-yellow-600">Gallery</a>
+    <a href="contact.html" class="hover:text-yellow-600">Contact</a>
+  </nav>
+</header>
   <!-- Hero Section -->
   <section class="hero-image relative flex items-center justify-center text-center text-white">
     <div class="glass absolute max-w-xl mx-auto text-center" data-aos="fade-up">
@@ -56,8 +83,7 @@
       <a href="tours.html" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-full transition">View Tours</a>
     </div>
   </section>
-
-  <!-- Features Section -->
+  <!-- Why Choose Us -->
   <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-12" data-aos="fade-down">
@@ -66,33 +92,177 @@
       </div>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 text-center" data-aos="fade-up">
-          <i data-feather="map-pin" class="w-8 h-8 text-yellow-600 mb-4 align-center"></i>
+          <div class="feature-icon mb-4"><i data-feather="map-pin" class="w-8 h-8 text-yellow-600"></i></div>
           <h3 class="text-xl font-semibold mb-2">Local Guides</h3>
           <p>Experience Dubai through the eyes of locals.</p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 text-center" data-aos="fade-up" data-aos-delay="100">
-          <i data-feather="landmark" class="w-8 h-8 text-yellow-600 mb-4"></i>
+          <div class="feature-icon mb-4"><i data-feather="landmark" class="w-8 h-8 text-yellow-600"></i></div>
           <h3 class="text-xl font-semibold mb-2">Heritage Sites</h3>
           <p>Visit historic souks, mosques, and museums.</p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 text-center" data-aos="fade-up" data-aos-delay="200">
-          <i data-feather="sun" class="w-8 h-8 text-yellow-600 mb-4"></i>
+          <div class="feature-icon mb-4"><i data-feather="sun" class="w-8 h-8 text-yellow-600"></i></div>
           <h3 class="text-xl font-semibold mb-2">Desert Adventures</h3>
           <p>Ride camels, enjoy sunset dinners, and more.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Back to Home -->
-  <div class="text-center my-10" data-aos="fade-in">
-    <a href="index.html" class="text-yellow-700 hover:underline text-lg">← Back to Home</a>
-  </div>
-
+  <!-- Popular Tours -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-down">
+        <h2 class="text-3xl font-bold text-yellow-700">Popular Tours</h2>
+        <p class="text-gray-600 mt-2">Handpicked experiences for every traveler</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Tour Card 1 -->
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up">
+          <img src="/assets/desert ride.jpg" alt="Desert Safari" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Desert Safari</h3>
+          <p class="text-gray-600 mb-2">Sunset camel ride & dinner</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$120 / 4 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+        <!-- Tour Card 2 -->
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+          <img src="/assets/haritage walk.jpg" alt="Heritage Walk" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Heritage Walk</h3>
+          <p class="text-gray-600 mb-2">Explore souks & museums</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$80 / 3 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+        <!-- Tour Card 3 -->
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+          <img src="/assets/gallary 11.jpg" alt="Dhow Cruise" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Dhow Cruise</h3>
+          <p class="text-gray-600 mb-2">Dinner on Dubai Creek</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$100 / 2 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up">
+          <img src="/assets/all 11.jpg" alt="Desert Safari" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Desert Safari</h3>
+          <p class="text-gray-600 mb-2">Sunset camel ride & dinner</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$120 / 4 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+        <!-- Tour Card 5 -->
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+          <img src="/assets/all 1.jpg" alt="Heritage Walk" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Heritage Walk</h3>
+          <p class="text-gray-600 mb-2">Explore souks & museums</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$80 / 3 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+        <!-- Tour Card 6 -->
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+          <img src="/assets/generate images for Dubai haritage musium_ tour stunning image.jpg" alt="Dhow Cruise" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Dhow Cruise</h3>
+          <p class="text-gray-600 mb-2">Dinner on Dubai Creek</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$100 / 2 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Experience Highlights -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-down">
+        <h2 class="text-3xl font-bold text-yellow-700">Experience Highlights</h2>
+        <p class="text-gray-600 mt-2">Moments that define the magic of Dubai</p>
+      </div>
+      <div class="overflow-hidden">
+        <div class="flex gap-6 animate-scroll-x pb-8" data-aos="fade-up">
+          <img src="/assets/gallary 1.jpg" class="rounded-lg w-64 h-40 object-cover" alt="Highlight 1">
+          <img src="/assets/gallary 2.jpg" class="rounded-lg w-64 h-40 object-cover" alt="Highlight 2">
+          <img src="/assets/gallary 3.jpg" class="rounded-lg w-64 h-40 object-cover" alt="Highlight 3">
+          <img src="/assets/haritage musium.jpg" class="rounded-lg w-64 h-40 object-cover" alt="Highlight 4">
+          <img src="/assets/pic 2.jpg" class="rounded-lg w-64 h-40 object-cover" alt="Highlight 1">
+          <img src="/assets/gallary 1.jpg" class="rounded-lg w-64 h-40 object-cover" alt="Highlight 2">
+          <img src="/assets/gallary 6.jpg" class="rounded-lg w-64 h-40 object-cover" alt="Highlight 3">
+          <img src="/assets/gallary 11.jpg" class="rounded-lg w-64 h-40 object-cover" alt="Highlight 4">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Book Your Tour -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12" data-aos="fade-down">
+        <h2 class="text-3xl font-bold text-yellow-700">Book Your Tour</h2>
+        <p class="text-gray-600 mt-2">Choose your adventure and reserve your spot instantly</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Reuse Tour Cards or add new ones -->
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up">
+          <img src="/assets/old dubai.jpg" alt="Old Dubai Tour" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Old Dubai Tour</h3>
+          <p class="text-gray-600 mb-2">Al Fahidi, Creek & Gold Souk</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$90 / 3 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+          <img src="/assets/gallary 1.jpg" alt="Museum Tour" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Museum Tour</h3>
+          <p class="text-gray-600 mb-2">Dubai Museum & Cultural Center</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$70 / 2 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+          <img src="/assets/gallary 3.jpg" alt="Sunset Dinner" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Sunset Dinner</h3>
+          <p class="text-gray-600 mb-2">Traditional meal in desert camp</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$110 / 3 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+         <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up">
+          <img src="/assets/haritage musium.jpg" alt="Old Dubai Tour" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Old Dubai Tour</h3>
+          <p class="text-gray-600 mb-2">Al Fahidi, Creek & Gold Souk</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$90 / 3 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+          <img src="/assets/modern dubai 1.jpg" alt="Museum Tour" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Museum Tour</h3>
+          <p class="text-gray-600 mb-2">Dubai Museum & Cultural Center</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$70 / 2 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-2 p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+          <img src="/assets/sky attact.jpg" alt="Sunset Dinner" class="rounded-lg mb-4 w-full h-48 object-cover">
+          <h3 class="text-xl font-semibold mb-2">Sunset Dinner</h3>
+          <p class="text-gray-600 mb-2">Traditional meal in desert camp</p>
+          <p class="text-yellow-700 font-bold text-lg mb-4">$110 / 3 hrs</p>
+          <a href="booking.html" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-full transition">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials -->
+  <section class="py-20 bg-yellow-50">
+    <div class="max-w-5xl mx-auto px-6 text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold text-yellow-700 mb-8">What Travelers Say</h2>
+      <div class="space-y-8">
+        <blockquote class="italic text-gray-700">“An unforgettable journey through Dubai’s rich culture. The guides were amazing!”</blockquote>
+        <blockquote class="italic text-gray-700">“Loved the desert safari and the sunset dinner. Truly magical!”</blockquote>
+        <blockquote class="italic text-gray-700">“The heritage tour gave me a deeper appreciation for Dubai’s history.”</blockquote>
+      </div>
+    </div>
+  </section>
+  <!-- Booking CTA -->
+  <section class="bg-yellow-600 text-white py-12 text-center" data-aos="zoom-in">
+    <h2 class="text-3xl font-bold mb-4">Ready to Discover Dubai?</h2>
+    <p class="mb-6">Book your tour today and experience the magic firsthand.</p>
+    <a href="contact.html" class="bg-white text-yellow-700 px-6 py-3 rounded-full font-semibold hover:bg-yellow-100 transition">Contact Us</a>
+  </section>
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-8">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-      <p class="mb-4 md:mb-0">&copy; 2025 Dubai Heritage Tours</p>
+      <p class="mb-4 md:mb-0">&copy; 2025 Dubai Tours</p>
       <div class="flex gap-4">
         <a href="#"><i data-feather="facebook" class="w-6 h-6"></i></a>
         <a href="#"><i data-feather="instagram" class="w-6 h-6"></i></a>
@@ -100,12 +270,20 @@
       </div>
     </div>
   </footer>
-
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init();
     feather.replace();
   </script>
+  <script>
+  AOS.init();
+  feather.replace();
+  // Toggle mobile menu
+  document.getElementById('menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+ </script>
 </body>
 </html>
